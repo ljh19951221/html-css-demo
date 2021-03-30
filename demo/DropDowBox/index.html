@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>我是下拉框页面</title>
+		<style>
+			ul{
+				list-style-type:none;
+				margin: 0;
+				padding: 0;
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="but" onclick="butClick()"><span>请选择：</span><span>></span></div>
+			<ul id="ha" class="show">
+				<li>选项1</li>
+				<li>选项2</li>
+				<li>选项3</li>
+				<li>选项4</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script>
+    function butClick(){
+		var show =  document.getElementById('ha');
+		if(show.style.display=="block"){
+			show.style.display="none";
+		}else{
+			show.style.display="block";
+		}
+	}
+</script>
