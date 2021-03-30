@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		一、两个bug
+		引起原因：兄弟div之间的垂直margin是公共领域
+		
+		1、margin塌陷bug 解决
+		bfc block format context
+		position:absolute;
+		display:inline-block;
+		float:left/right;
+		overflow:hidden;
+		<div class="wrapper">
+			<div class="content"></div>
+		</div>
+		
+		2、margin合并
+		<div class="demo1"></div>
+		<div class="demo2"></div>
+		
+		二、浮动元素产生了浮动流
+		产生了bfc的元素和文本类属性的元素以及文本，都能看到浮动元素
+		
+		三、清除浮动
+		只要子元素处于父级元素内部，不管子元素是否实际占空间，都可以起到把父元素撑起来的效果。
+	</body>
+</html>
+<style type="text/css">
+*{
+	margin: 0;
+	padding: 0;
+}
+.wrapper{
+	width: 100px;
+	height: 100px;
+	margin-left: 30px;
+	margin-top: 40px;
+	background-color: #3C3C3C;
+	border-top: #3C3C3C 1px solid;
+}
+.content{
+	width: 50px;
+	height: 50px;
+	margin-left: 20px;
+	margin-top: 30px;
+	background-color: #F4F4F4;
+}
+.demo1{
+	height: 12px;
+	background-color: #F5F5F5;
+	margin-bottom: 100px;
+}
+.demo2{
+	height: 12px;
+	background-color: #9C9C9C;
+	margin-top: 100px;
+}
+</style>
